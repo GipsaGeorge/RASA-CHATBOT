@@ -1,0 +1,70 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: introduction path 1
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_introduction
+    - action: utter_botintroduction
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - action: utter_any_more_questions
+    - intent: deny
+    - action: utter_goodbye
+
+- story: introduction path 2
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_introduction
+    - action: utter_botintroduction
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - action: utter_any_more_questions
+    - intent: more_questions
+    - action: utter_ask_more_questions
+    - intent: corona_intro
+    - action: utter_corona_intro
+    - action: utter_any_more_questions
+    - intent: corona_symptoms
+    - action: utter_symptoms
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - intent: high_risk
+    - action: utter_corona_at_high_risk
+    - action: utter_any_more_questions
+    - intent: deny
+    - action: utter_goodbye
+
